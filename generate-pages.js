@@ -5,7 +5,7 @@ const DOMAIN = 'https://bruxproof.com';
 const YEAR = new Date().getFullYear();
 const LAST_REVIEWED = '2026-08-28';
 const AUTHOR_NAME = 'BruxProof Editorial Team';
-const GSC_TAG = ''; // TODO: Add Google Search Console verification tag
+const GSC_TAG = 'xps_FuwGDIwW5LJuoF0Ax8xLzLnJhpaX6SeGCdf6YIo';
 const AMAZON_TAG = 'bruxproof-20'; // TODO: Replace with real Amazon Associates tag
 const ORG = {
   '@type': 'Organization',
@@ -38,7 +38,11 @@ function layout({ title, description, canonicalPath, h1, subtitle, jsonLd, bodyH
 <meta property="og:description" content="${description}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonical}">
-<meta name="twitter:card" content="summary_large_image">${gscTag}
+<meta property="og:image" content="${DOMAIN}/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${DOMAIN}/og-image.png">${gscTag}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
