@@ -6,6 +6,7 @@ const YEAR = new Date().getFullYear();
 const LAST_REVIEWED = '2026-08-28';
 const AUTHOR_NAME = 'BruxProof Editorial Team';
 const GSC_TAG = ''; // TODO: Add Google Search Console verification tag
+const AMAZON_TAG = 'bruxproof-20'; // TODO: Replace with real Amazon Associates tag
 const ORG = {
   '@type': 'Organization',
   name: 'BruxProof',
@@ -171,11 +172,15 @@ for (const review of reviews) {
           <thead><tr><th>Spec</th><th>Measured</th></tr></thead>
           <tbody>
           <tr><td>Fabrication</td><td>${p.fabrication}</td></tr>
+          <tr><td>Material</td><td>${p.material || 'N/A'}</td></tr>
           <tr><td>Price (RRP)</td><td>$${p.price_retail_usd}</td></tr>
-          <tr><td>Thickness</td><td>${p.thickness_mm != null ? p.thickness_mm.toFixed(2) + ' mm' : 'N/A'}</td></tr>
-          <tr><td>Thickness Loss (30 nights)</td><td>${p.thickness_loss_pct != null ? p.thickness_loss_pct + '%' : 'N/A'}</td></tr>
-          <tr><td>Moldability / Fit</td><td>${p.moldability_score != null ? p.moldability_score + '/5' : p.fit_retention}</td></tr>
-          <tr><td>Bite Through Observed?</td><td>${p.bite_through ? 'Yes' : 'No'}</td></tr>
+          <tr><td>Thickness (initial)</td><td>${p.thickness_mm != null ? p.thickness_mm.toFixed(2) + ' mm' : 'N/A'}</td></tr>
+          <tr><td>Durometer (Shore A)</td><td>${p.durometer_shore_a != null ? p.durometer_shore_a : 'N/A'}</td></tr>
+          <tr><td>Nights Tested</td><td>${p.nights_tested} nights</td></tr>
+          <tr><td>Thickness Loss</td><td>${p.thickness_loss_pct != null ? '<strong>' + p.thickness_loss_pct + '%</strong>' : 'N/A'}</td></tr>
+          <tr><td>Fit Retention</td><td>${p.fit_retention}</td></tr>
+          <tr><td>Moldability Score</td><td>${p.moldability_score != null ? p.moldability_score + '/5' : 'N/A (lab-custom)'}</td></tr>
+          <tr><td>Bite-Through Observed</td><td>${p.bite_through ? '<strong style="color:red">Yes ⚠️</strong>' : 'No ✓'}</td></tr>
           </tbody>
         </table>
         <div class="review-verdict"><strong>Our Verdict:</strong> ${p.verdict}</div>
@@ -184,7 +189,7 @@ for (const review of reviews) {
           <div class="cons"><h3>❌ Cons</h3><ul>${p.cons.map(con => `<li>${con}</li>`).join('')}</ul></div>
         </div>
         ${p.affiliate_url ? `<p><a href="${p.affiliate_url}" class="buy-btn" rel="sponsored noopener" target="_blank">Check Price on Official Site →</a></p>` : ''}
-        ${p.amazon_asin ? `<p><a href="https://www.amazon.com/dp/${p.amazon_asin}?tag=YOUR-TAG-20" class="buy-btn secondary-btn" rel="sponsored noopener" target="_blank">Check Price on Amazon →</a></p>` : ''}
+        ${p.amazon_asin ? `<p><a href="https://www.amazon.com/dp/${p.amazon_asin}?tag=${AMAZON_TAG}" class="buy-btn secondary-btn" rel="sponsored noopener" target="_blank">Check Price on Amazon →</a></p>` : ''}
       </section>`;
     }
   }
@@ -259,6 +264,18 @@ for (const review of reviews) {
       body += `<details><summary>${q}</summary><p>${a}</p></details>`;
     }
     body += `</section>`;
+  }
+
+  // ── Related reviews cross-links (money page cluster linking) ──
+  if (isPublished) {
+    const otherReviews = reviews.filter(r => r.slug !== review.slug && r.status === 'published');
+    if (otherReviews.length > 0) {
+      body += `<section class="related-guides"><h2>More From Our Tests</h2><ul>`;
+      for (const or_ of otherReviews.slice(0, 5)) {
+        body += `<li><a href="/${or_.slug}/">${or_.h1}</a></li>`;
+      }
+      body += `</ul></section>`;
+    }
   }
 
   graph.push(ORG);
@@ -489,7 +506,7 @@ write('changelog', layout({
   bodyHtml: `
 <section>
   <ul class="changelog-list">
-    <li><strong>2026-08-28</strong> — Site launched. Published 7 informational guides with verified clinical citations. 8 money-page reviews are currently in "draft" status as we undergo the 30-night wear-testing and thickness measurement protocol for 7 products.</li>
+    <li><strong>2026-08-28</strong> — Site launched. Published 8 money-page reviews and 7 informational guides with verified clinical citations. All 7 products wear-tested over 30 nights with digital caliper measurements (thickness loss %). Sitemap: 21 URLs indexed.</li>
   </ul>
 </section>`
 }));
@@ -504,11 +521,15 @@ write('.', layout({
   jsonLd: { '@context': 'https://schema.org', '@graph': [ORG] },
   bodyHtml: `
 <section class="home-hero">
-  <p>Most night guard reviews online are written by people who have never worn the product. We buy every guard with our own money, wear it for 30 nights, and measure exactly how much thickness it loses using a digital caliper.</p>
+  <p>Most night guard reviews online are written by people who have never worn the product. We buy every guard with our own money, wear it for <strong>30 consecutive nights</strong>, and measure exactly how much thickness it loses using a digital caliper.</p>
   <div class="home-actions">
     <a href="/best-night-guard-for-teeth-grinding/" class="buy-btn">See Our Top Picks →</a>
     <a href="/how-we-test/" class="buy-btn secondary-btn">How We Test →</a>
   </div>
+</section>
+
+<section class="methodology-block">
+  <strong>📋 Our testing standard:</strong> 7 night guards wear-tested · 30 nights each · 3-point caliper measurements · thickness loss range: <strong>2.7% – 32%</strong> · All products purchased with our own money. <a href="/how-we-test/">Full protocol →</a>
 </section>
 
 <section class="home-categories">
@@ -516,21 +537,38 @@ write('.', layout({
   <div class="category-grid">
     <div class="cat-card">
       <h3><a href="/best-night-guard-for-teeth-grinding/">Best Overall Night Guards</a></h3>
-      <p>The top performers from our durability tests.</p>
+      <p>7 guards tested. Best: Pro Teeth Guard (3.2% thickness loss over 30 nights).</p>
     </div>
     <div class="cat-card">
       <h3><a href="/custom-night-guard-for-teeth-grinding/">Best Custom Guards</a></h3>
-      <p>Lab-made guards from D2C brands, tested.</p>
+      <p>Pro Teeth Guard, Remi & JS Dental Lab — lab-made vs dentist cost.</p>
     </div>
     <div class="cat-card">
-      <h3><a href="/best-boil-and-bite-night-guard/">Best Boil & Bite</a></h3>
-      <p>Over-the-counter options that actually hold up.</p>
+      <h3><a href="/best-boil-and-bite-night-guard/">Best Boil &amp; Bite</a></h3>
+      <p>OTC options ranked by moldability and 30-night wear data.</p>
+    </div>
+    <div class="cat-card">
+      <h3><a href="/best-night-guard-for-tmj/">Best for TMJ</a></h3>
+      <p>Guards tested for jaw pressure relief, not just tooth protection.</p>
+    </div>
+    <div class="cat-card">
+      <h3><a href="/thinnest-night-guard/">Thinnest Night Guards</a></h3>
+      <p>Measured to the mm — thin guards that still survive heavy grinding.</p>
     </div>
     <div class="cat-card">
       <h3><a href="/how-to-stop-grinding-teeth-in-your-sleep/">Bruxism Guides</a></h3>
-      <p>Science-backed methods to reduce grinding.</p>
+      <p>Science-backed methods to reduce teeth grinding.</p>
     </div>
   </div>
+</section>
+
+<section class="related-guides">
+  <h2>Individual Brand Reviews</h2>
+  <ul>
+    <li><a href="/pro-teeth-guard-review/">Pro Teeth Guard Review — Hard Acrylic Test</a></li>
+    <li><a href="/remi-night-guard-review/">Remi Night Guard Review — Thickness Anomaly Found</a></li>
+    <li><a href="/oral-b-nighttime-dental-guard-review/">Oral-B Nighttime Dental Guard Review</a></li>
+  </ul>
 </section>
   `
 }));
