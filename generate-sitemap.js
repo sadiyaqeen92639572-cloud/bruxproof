@@ -19,3 +19,11 @@ ${existing.map(p => `  <url><loc>${DOMAIN}${p}</loc><lastmod>${today}</lastmod><
 `;
 fs.writeFileSync('sitemap.xml', xml);
 console.log(`sitemap.xml written with ${existing.length} URLs`);
+
+const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${DOMAIN}/sitemap.xml
+`;
+fs.writeFileSync('robots.txt', robots);
+console.log('robots.txt written');
