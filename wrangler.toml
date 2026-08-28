@@ -1,0 +1,6 @@
+[build]
+command = "node generate-pages.js && node generate-sitemap.js"
+publish = "."
+
+[env]
+NODE_VERSION = "20"
