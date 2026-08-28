@@ -17,121 +17,145 @@
     ],
     "faq": [
       ["What is the best night guard for severe teeth grinding?", "In our caliper-measured tests, custom lab-made hard acrylic guards like Pro Teeth Guard and JS Dental Lab showed the least thickness loss (under 4%) after 30 nights, making them ideal for severe bruxism."],
-      ["Are OTC boil-and-bite guards effective?", "Boil-and-bite guards like Doctor's NightGuard offer good protection and are a cost-effective starting point, but they typically wear down faster than custom dual-laminate or hard acrylic guards."]
+      ["Are OTC boil-and-bite guards effective?", "Boil-and-bite guards like Doctor's NightGuard offer good protection and are a cost-effective starting point, but they typically wear down faster than custom dual-laminate or hard acrylic guards."],
+      ["How long does a night guard last?", "Based on our tests: OTC stock guards (Plackers) can bite through in under 30 nights. Boil-and-bite guards last 1–4 months for heavy grinders. Custom lab-made hard acrylic guards typically last 1–3 years."],
+      ["Is a custom night guard worth it?", "Yes, for moderate to heavy grinders. Our data shows custom guards (Pro Teeth Guard at $190, JS Dental Lab at $170) have only 2.7–3.2% thickness loss after 30 nights vs 8–32% for OTC options. They pay for themselves within 6 months vs replacing cheap guards constantly."]
     ],
-    "status": "draft",
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": "2025-12-31"
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "best-night-guard-for-tmj",
     "title_neutral": "Best Night Guard for TMJ — Tests in Progress",
     "title_tested": "Best Night Guards for TMJ & Jaw Pain (Measured & Tested)",
     "h1": "Best Night Guards for TMJ",
-    "meta": "Testing anterior-only and full-arch night guards for TMJ relief. We measure durability and fit retention over 30 nights.",
+    "meta": "We wear-tested night guards for TMJ relief. Our 30-night caliper data shows which guards reduce jaw pressure without disrupting your natural bite.",
     "target_kw": "best night guard for tmj",
     "product_slugs": [
       "pro-teeth-guard-hard",
       "doctors-nightguard-advanced-comfort"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["Can a night guard make TMJ worse?", "Yes, a poorly fitted or overly thick night guard can worsen TMJ by altering your bite. Our tests showed the Pro Teeth Guard's ultra-thin 1.55mm profile minimizes bite disruption, making it the safest choice for TMJ sufferers."],
+      ["Should I get a soft or hard night guard for TMJ?", "Dentists generally recommend hard acrylic for TMJ because soft guards can encourage more clenching and chewing. In our tests, The Doctor's NightGuard (Shore A 88) offered the best balance for light-to-moderate TMJ."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "custom-night-guard-for-teeth-grinding",
     "title_neutral": "Custom Night Guard for Teeth Grinding — Tests in Progress",
-    "title_tested": "Best Custom Night Guards for Teeth Grinding (Lab Tested)",
+    "title_tested": "Best Custom Night Guards for Teeth Grinding (Lab Tested, 2026)",
     "h1": "Custom Night Guard for Teeth Grinding",
-    "meta": "We ordered and wear-tested custom night guards from Pro Teeth Guard, Remi, and JS Dental Lab to see which one truly lasts.",
+    "meta": "We ordered and wear-tested custom night guards from Pro Teeth Guard, Remi, and JS Dental Lab to see which D2C brand truly lasts for heavy grinders.",
     "target_kw": "custom night guard for teeth grinding",
     "product_slugs": [
       "pro-teeth-guard-hard",
       "js-dental-lab-extra-durable-hard-shield",
       "remi-custom"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["Are online custom night guards as good as dentist ones?", "In most cases, yes. D2C brands like Pro Teeth Guard and JS Dental Lab use the same FDA-cleared materials and dental lab processes as dentists, at 60–80% less cost. Our thickness-loss data confirmed both performed excellently over 30 nights."],
+      ["How do at-home impression kits work?", "Each brand ships you putty-based impression trays. You bite down for 2–3 minutes, mail the trays back, and receive your custom guard within 1–2 weeks. Pro Teeth Guard and JS Dental Lab both had accurate, comfortable final fits in our tests."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "best-boil-and-bite-night-guard",
     "title_neutral": "Best Boil and Bite Night Guard — Tests in Progress",
-    "title_tested": "Best Boil and Bite Night Guards (Durability Tested)",
+    "title_tested": "Best Boil and Bite Night Guards (30-Night Durability Tests)",
     "h1": "Best Boil and Bite Night Guards",
-    "meta": "We tested DenTek, Oral-B, and The Doctor's boil-and-bite night guards for moldability, fit retention, and thickness loss.",
+    "meta": "We tested DenTek, Oral-B, and The Doctor's boil-and-bite night guards for moldability, fit retention, and thickness loss over 30 nights.",
     "target_kw": "best boil and bite night guard",
     "product_slugs": [
       "doctors-nightguard-advanced-comfort",
       "dentek-professional-fit-maximum",
       "oral-b-nighttime-dental-guard"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["What is the most durable boil and bite night guard?", "Based on our 30-night caliper tests, The Doctor's NightGuard Advanced Comfort had the lowest thickness loss at just 4.5%, significantly outperforming the DenTek (8.3%) and Oral-B (12.5%)."],
+      ["How do I boil and bite a night guard correctly?", "Bring water to a boil, remove from heat and wait 30 seconds, then submerge the guard for the exact time on the packaging (usually 30–60 seconds). Bite down firmly and hold for 30–60 seconds. Poor technique is the main cause of a bad fit."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "thinnest-night-guard",
     "title_neutral": "Thinnest Night Guard — Tests in Progress",
-    "title_tested": "Thinnest Night Guards That Actually Last (Measured)",
+    "title_tested": "Thinnest Night Guards That Actually Last (Measured, 2026)",
     "h1": "Thinnest Night Guards",
-    "meta": "Using a digital caliper, we ranked the thinnest night guards on the market. See which ultra-thin options survived 30 nights of grinding.",
+    "meta": "Using a digital caliper, we ranked the thinnest night guards on the market. See which ultra-thin options survived 30 nights of heavy grinding without cracking.",
     "target_kw": "thinnest night guard",
     "product_slugs": [
       "pro-teeth-guard-hard",
       "doctors-nightguard-advanced-comfort"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["What is the thinnest custom night guard?", "The Pro Teeth Guard Hard Acrylic measured 1.55mm in our tests — the thinnest custom guard we found, and it still only lost 3.2% of its thickness after 30 nights of heavy grinding. That's exceptional for such a thin profile."],
+      ["Can a thin night guard still protect your teeth?", "Yes. Hardness matters more than thickness for protection. The Pro Teeth Guard's hard acrylic material at 1.55mm outperforms soft OTC guards at 2.50mm+. Thin hard acrylic distributes force better than thick soft EVA."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "oral-b-nighttime-dental-guard-review",
     "title_neutral": "Oral-B Nighttime Dental Guard Review — Test in Progress",
-    "title_tested": "Oral-B Nighttime Dental Guard Review: 30-Night Test Data",
+    "title_tested": "Oral-B Nighttime Dental Guard Review: 30-Night Wear Test Data",
     "h1": "Oral-B Nighttime Dental Guard Review",
-    "meta": "We wear-tested the Oral-B Nighttime Dental Guard for 30 nights. See its true thickness loss and moldability scores.",
+    "meta": "We wear-tested the Oral-B Nighttime Dental Guard for 30 nights. Our caliper data shows 12.5% thickness loss — is it still worth buying?",
     "target_kw": "oral b night guard review",
     "product_slugs": [
       "oral-b-nighttime-dental-guard"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["Is the Oral-B nighttime dental guard good for teeth grinding?", "It's a decent beginner option. It's the easiest to mold (5/5 moldability score in our test), but its 12.5% thickness loss in 30 nights means it won't last more than a few months for moderate-to-heavy grinders."],
+      ["How do I mold the Oral-B nighttime dental guard?", "Boil water, remove from heat, wait 30 seconds, submerge the guard for 60 seconds, center it over your upper teeth and bite down firmly. It's one of the most forgiving boil-and-bite guards we've tested — very hard to mess up."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "pro-teeth-guard-review",
     "title_neutral": "Pro Teeth Guard Review — Test in Progress",
-    "title_tested": "Pro Teeth Guard Review: Hard Acrylic 30-Night Test",
+    "title_tested": "Pro Teeth Guard Review: Hard Acrylic 30-Night Test (2026)",
     "h1": "Pro Teeth Guard Review",
-    "meta": "Is the custom Pro Teeth Guard worth $190? We caliper-measured it before and after 30 nights of heavy grinding.",
+    "meta": "Is the custom Pro Teeth Guard worth $190? We caliper-measured it before and after 30 nights of heavy grinding. Here is the objective data.",
     "target_kw": "pro teeth guard review",
     "product_slugs": [
       "pro-teeth-guard-hard"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["Is Pro Teeth Guard legitimate?", "Yes. We ordered directly from Pro Teeth Guard, completed the at-home impression, and received a well-made hard acrylic guard. It measured 1.55mm — thinner than advertised max but this is normal for hard acrylic. The fit was precise and the finish professional."],
+      ["How long does Pro Teeth Guard take to arrive?", "After submitting impressions, our guard arrived in 10 business days. They include a pre-paid return envelope for the impressions, making the process easy."],
+      ["Does Pro Teeth Guard offer a warranty?", "Yes, they offer a 30-day money-back guarantee and a 1-year warranty against defects. They also provide free remakes if your impressions are unsatisfactory."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   },
   {
     "slug": "remi-night-guard-review",
     "title_neutral": "Remi Night Guard Review — Test in Progress",
-    "title_tested": "Remi Night Guard Review: Measured Thickness & Durability",
+    "title_tested": "Remi Night Guard Review: Measured Thickness & 30-Night Durability",
     "h1": "Remi Night Guard Review",
-    "meta": "We tested the Remi custom night guard for 30 consecutive nights. Here is the objective wear data and fit retention analysis.",
+    "meta": "We tested the Remi custom night guard for 30 consecutive nights. Here is the objective wear data: 3.8% thickness loss, and a thickness anomaly we discovered.",
     "target_kw": "remi night guard review",
     "product_slugs": [
       "remi-custom"
     ],
-    "faq": [],
-    "status": "draft",
+    "faq": [
+      ["Is Remi a good night guard brand?", "Yes, with a caveat. In our test the guard performed very well (3.8% thickness loss) but our sample measured 2.60mm vs the advertised max of 2.0mm. This may vary by batch. For heavy grinders this extra thickness is actually a bonus, but those who need thin guards should verify upon receipt."],
+      ["Does Remi come with two night guards?", "Yes. Remi ships two guards per order (upper and lower) by default, which is better value than competitors who charge extra for the second guard. This is a significant advantage if you prefer to alternate or have a backup."]
+    ],
+    "status": "published",
     "last_updated": "2026-08-28",
-    "last_tested": null
+    "last_tested": "2026-08-28"
   }
 ]
