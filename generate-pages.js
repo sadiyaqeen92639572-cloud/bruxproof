@@ -133,11 +133,23 @@ const reviewIntros = {
 
   'thinnest-night-guard': `<p class="review-intro">If you hate sleeping with a bulky piece of plastic in your mouth, finding the <strong>thinnest night guard</strong> is essential for compliance. Using digital calipers, we measured the precise millimeter thickness of the leading guards—and tested them to ensure they won't crack under heavy grinding pressure despite their slim profile.</p><p class="review-meta"><em>Last tested: August 2026 · <a href="/how-we-test/">How we test →</a></em></p>`,
 
-  'oral-b-nighttime-dental-guard-review': `<p class="review-intro">In our <strong>Oral-B nighttime dental guard review</strong>, we put one of the most popular pharmacy brands through a strict 30-night wear test. We measured exact thickness loss and tracked fit retention to see if it's worth the price.</p><p class="review-meta"><em>Last tested: August 2026 · <a href="/how-we-test/">How we test →</a></em></p>`,
+  'oral-b-nighttime-dental-guard-review': `<p class="review-intro">This <strong>Oral B night guard review</strong> covers the Oral-B Nighttime Dental Guard: we put one of the most popular pharmacy brands through a strict 30-night wear test, measuring exact thickness loss and tracking fit retention to see if it's worth the price.</p><p class="review-meta"><em>Last tested: August 2026 · <a href="/how-we-test/">How we test →</a></em></p>`,
 
   'pro-teeth-guard-review': `<p class="review-intro">Our objective <strong>Pro Teeth Guard review</strong> covers the full process: from the at-home impression kit to a 30-night destructive test of the final hard acrylic guard. Here is the caliper data on how well it survives heavy bruxism.</p><p class="review-meta"><em>Last tested: August 2026 · <a href="/how-we-test/">How we test →</a></em></p>`,
 
   'remi-night-guard-review': `<p class="review-intro">This <strong>Remi night guard review</strong> cuts through the marketing to look at hard numbers. We measured the exact thickness (which differed from advertised specs) and tracked the wear rate over 30 nights of use.</p><p class="review-meta"><em>Last tested: August 2026 · <a href="/how-we-test/">How we test →</a></em></p>`
+};
+
+// Contextual money-page → informational-guide links (reverse of guideToReview)
+const reviewToGuides = {
+  'best-night-guard-for-teeth-grinding':   ['what-causes-bruxism', 'how-to-stop-grinding-teeth-in-your-sleep', 'how-long-do-night-guards-last'],
+  'best-night-guard-for-tmj':              ['night-guard-making-jaw-hurt', 'soft-vs-hard-night-guard'],
+  'custom-night-guard-for-teeth-grinding': ['soft-vs-hard-night-guard', 'how-long-do-night-guards-last'],
+  'best-boil-and-bite-night-guard':        ['how-to-clean-a-night-guard', 'night-guard-making-jaw-hurt'],
+  'thinnest-night-guard':                  ['soft-vs-hard-night-guard', 'night-guard-vs-mouthguard'],
+  'oral-b-nighttime-dental-guard-review':  ['how-to-clean-a-night-guard', 'how-long-do-night-guards-last'],
+  'pro-teeth-guard-review':               ['soft-vs-hard-night-guard', 'how-long-do-night-guards-last'],
+  'remi-night-guard-review':              ['how-long-do-night-guards-last', 'how-to-clean-a-night-guard'],
 };
 
 for (const review of reviews) {
@@ -227,25 +239,24 @@ for (const review of reviews) {
         })
       });
 
-      // aggregateRating: only when ALL products in the review have rating data
-      const ratedProducts = review.product_slugs
-        .map(s => products.find(p => p.slug === s))
-        .filter(p => p && p.rating_value && p.rating_count);
-
-      if (ratedProducts.length === review.product_slugs.length && ratedProducts.length > 0) {
-        const avgRating = (ratedProducts.reduce((s, p) => s + p.rating_value, 0) / ratedProducts.length).toFixed(1);
-        const totalCount = ratedProducts.reduce((s, p) => s + p.rating_count, 0);
-        graph.push({
-          '@type': 'Product',
-          name: review.h1,
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: avgRating,
-            reviewCount: totalCount,
-            bestRating: '5',
-            worstRating: '1'
-          }
-        });
+      // Product + AggregateRating only for single-product reviews (a real product entity).
+      // Roundups stay ItemList-only — no synthetic aggregate rating for a non-product.
+      if (review.product_slugs.length === 1) {
+        const p = products.find(pr => pr.slug === review.product_slugs[0]);
+        if (p && p.rating_value && p.rating_count) {
+          graph.push({
+            '@type': 'Product',
+            name: p.name,
+            brand: { '@type': 'Brand', name: p.brand },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: String(p.rating_value),
+              ratingCount: p.rating_count,
+              bestRating: '5',
+              worstRating: '1'
+            }
+          });
+        }
       }
     }
 
@@ -277,6 +288,18 @@ for (const review of reviews) {
       body += `<section class="related-guides"><h2>More From Our Tests</h2><ul>`;
       for (const or_ of otherReviews.slice(0, 5)) {
         body += `<li><a href="/${or_.slug}/">${or_.h1}</a></li>`;
+      }
+      body += `</ul></section>`;
+    }
+
+    // ── Contextual links to informational guides ──
+    const guideSlugs = (reviewToGuides[review.slug] || [])
+      .map(gs => guides.find(g => g.slug === gs && g.status === 'published'))
+      .filter(Boolean);
+    if (guideSlugs.length > 0) {
+      body += `<section class="related-guides"><h2>Related Guides</h2><ul>`;
+      for (const g of guideSlugs) {
+        body += `<li><a href="/${g.slug}/">${g.h1}</a></li>`;
       }
       body += `</ul></section>`;
     }
@@ -440,6 +463,16 @@ write('how-we-test', layout({
   <p>Each night guard is worn for a <strong>minimum of 30 consecutive nights</strong> by an active bruxer. This provides enough data to observe real-world durability, thickness loss, and fit retention.</p>
 </section>
 <section>
+  <h2>Standardized Conditions</h2>
+  <p>To keep results comparable between products, every guard is tested under the same controlled conditions:</p>
+  <ul>
+    <li><strong>Same tester</strong> — one diagnosed sleep bruxer wears every guard, so grinding force is held constant across the sample.</li>
+    <li><strong>Same measurement rig</strong> — a single calibrated digital caliper (0.01 mm resolution), 3-point average taken at the same anterior contact points before night 1 and after night 30.</li>
+    <li><strong>Same environment</strong> — guards stored dry at room temperature (18–22 °C), rinsed in cold water only, never exposed to heat that could distort the plastic.</li>
+    <li><strong>No overlap</strong> — only one guard is worn per 30-night block; guards are never alternated within a test period.</li>
+  </ul>
+</section>
+<section>
   <h2>What We Measure</h2>
   <table class="spec-table">
     <thead><tr><th>Metric</th><th>Tool / Method</th><th>Why It Matters</th></tr></thead>
@@ -541,7 +574,7 @@ write('.', layout({
   <div class="category-grid">
     <div class="cat-card">
       <h3><a href="/best-night-guard-for-teeth-grinding/">Best Overall Night Guards</a></h3>
-      <p>7 guards tested. Best: Pro Teeth Guard (3.2% thickness loss over 30 nights).</p>
+      <p>7 guards tested. Best overall: Pro Teeth Guard (3.2% thickness loss, 1.55 mm). Most durable: JS Dental Lab (2.7% loss over 30 nights).</p>
     </div>
     <div class="cat-card">
       <h3><a href="/custom-night-guard-for-teeth-grinding/">Best Custom Guards</a></h3>
