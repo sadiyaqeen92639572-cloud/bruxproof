@@ -50,7 +50,6 @@ function layout({ title, description, canonicalPath, h1, subtitle, jsonLd, bodyH
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
-<div class="disclosure-banner">⚠️ <strong>Affiliate Disclosure:</strong> Some links on this page are affiliate links — if you buy through them we may earn a small commission at no extra cost to you. This never influences which products we recommend. We purchase every product with our own money. <a href="/disclosure/">Full disclosure →</a></div>
 <header>
 <a href="/" class="site-logo">BruxProof</a>
 <nav class="header-nav">
@@ -70,6 +69,7 @@ ${bodyHtml}
 <p>BruxProof is published by <strong>Gesmine-Invest Limited</strong>, registered UK company number 14120136, Hardy House, 269 Poynders Gardens, London SW4 8PQ, United Kingdom.</p>
 <p><a href="/about/">About</a> · <a href="/how-we-test/">How We Test</a> · <a href="/disclosure/">Disclosure</a> · <a href="/privacy/">Privacy</a> · <a href="/changelog/">Changelog</a> · © ${YEAR} BruxProof.</p>
 <p class="footer-disclaimer">Content on this site is for informational purposes only and is not a substitute for professional medical advice. If jaw pain persists, please consult a licensed dentist or healthcare provider.</p>
+<div class="disclosure-banner">⚠️ <strong>Affiliate Disclosure:</strong> Some links on this page are affiliate links — if you buy through them we may earn a small commission at no extra cost to you. This never influences which products we recommend. We purchase every product with our own money. <a href="/disclosure/">Full disclosure →</a></div>
 </footer>
 </body>
 </html>
