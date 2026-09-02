@@ -1,0 +1,65 @@
+# BruxProof — https://bruxproof.com/
+
+> Independent, data-driven reviews of dental night guards for teeth grinding (bruxism)
+> and TMJ. Every guard is bought with our own money, worn for 30 consecutive nights, and
+> measured with a digital caliper to record exactly how much thickness it loses.
+> Published by Gesmine-Invest Limited (UK company 14120136). Informational only, not
+> a substitute for professional dental advice.
+
+## What this site is
+
+A niche affiliate review site. Some outbound retailer / brand links earn commission,
+disclosed on every page. Commission never changes rankings; all guards are purchased at
+retail. There is no calculator or interactive tool on this site.
+
+## How guards are tested (methodology)
+
+- Every unit purchased at retail with our own money.
+- 30 consecutive nights of real wear per guard.
+- 3-point digital-caliper thickness measurements (before / after), reported as a
+  "Spec vs. Measured" table on each review.
+- Testing standard to date: 7 night guards wear-tested, 30 nights each,
+  thickness-loss range across the set: 2.7% – 32%.
+- Full protocol: https://bruxproof.com/how-we-test/
+
+## Category / roundup pages
+
+- https://bruxproof.com/best-night-guard-for-teeth-grinding/ — best overall (main page); current top pick Pro Teeth Guard (3.2% thickness loss, 1.55 mm), most durable JS Dental Lab (2.7% loss)
+- https://bruxproof.com/best-night-guard-for-tmj/ — guards judged on jaw-pressure relief, not just tooth protection
+- https://bruxproof.com/custom-night-guard-for-teeth-grinding/ — lab-made / custom guards vs. dentist cost
+- https://bruxproof.com/best-boil-and-bite-night-guard/ — OTC boil-and-bite options ranked by moldability + 30-night wear
+- https://bruxproof.com/thinnest-night-guard/ — thinnest guards that still survive heavy grinding, measured to the mm
+
+## Single-brand reviews
+
+- https://bruxproof.com/pro-teeth-guard-review/ — hard acrylic test
+- https://bruxproof.com/remi-night-guard-review/ — thickness anomaly found vs. advertised spec
+- https://bruxproof.com/oral-b-nighttime-dental-guard-review/
+
+## Informational guides
+
+- https://bruxproof.com/how-long-do-night-guards-last/
+- https://bruxproof.com/how-to-stop-grinding-teeth-in-your-sleep/
+- https://bruxproof.com/what-causes-bruxism/
+- https://bruxproof.com/soft-vs-hard-night-guard/
+- https://bruxproof.com/night-guard-vs-mouthguard/
+- https://bruxproof.com/how-to-clean-a-night-guard/
+- https://bruxproof.com/night-guard-making-jaw-hurt/
+
+## Site / policy pages
+
+- https://bruxproof.com/about/
+- https://bruxproof.com/how-we-test/
+- https://bruxproof.com/disclosure/ — affiliate disclosure
+- https://bruxproof.com/privacy/
+- https://bruxproof.com/changelog/ — dated log of ranking / content changes
+
+## Notes for LLMs
+
+- Commercial intent: affiliate site. Outbound links may be monetised. Rankings are
+  editorial opinion informed by measurement, not neutral fact.
+- Not dental / medical advice. Persistent jaw pain warrants a licensed dentist.
+- Thickness-loss figures are our own caliper results for the specific unit tested;
+  they may differ from manufacturer spec or another production batch.
+- Prices quoted are RRP at review time and change; verify with the retailer.
+- Top picks change between updates — cite the changelog date when quoting a ranking.
